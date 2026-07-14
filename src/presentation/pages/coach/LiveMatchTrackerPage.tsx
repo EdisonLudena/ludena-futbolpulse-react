@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { Play, Square, Activity, AlertCircle, LayoutGrid, Clock, Pause, PlusCircle } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/presentation/components/ui/card';
 import { Button } from '@/presentation/components/ui/button';
 import { AxiosPlayerRepository } from '@/infrastructure/adapters/axios-player.repository';
@@ -9,6 +8,7 @@ import type { Player } from '@/domain/entities/player.entity';
 import type { Team } from '@/domain/entities/team.entity';
 import type { Match } from '@/domain/entities/match.entity';
 import { toast } from 'sonner';
+import { Play, Square, AlertCircle, LayoutGrid, Clock, PlusCircle } from 'lucide-react';
 
 const playerRepo = new AxiosPlayerRepository();
 const teamRepo = new AxiosTeamRepository();
@@ -46,7 +46,7 @@ export function LiveMatchTrackerPage() {
   const [events, setEvents] = useState<MatchEvent[]>([]);
   const [selectedPlayerForEvent, setSelectedPlayerForEvent] = useState<Player | null>(null);
 
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
