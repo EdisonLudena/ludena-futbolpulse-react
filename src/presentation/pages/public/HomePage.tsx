@@ -12,7 +12,7 @@ export function HomePage() {
         </div>
         <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
           La pasión del fútbol, <br className="hidden md:inline" />
-          <span className="text-primary">organizada.</span>
+          <span className="text-primary">organizada. EDISON Ludeña</span>
         </h1>
         <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
           Sigue a tus equipos favoritos, revisa los resultados de los partidos y mantente al día con los torneos más importantes.
